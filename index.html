@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <script>
         $(document).ready(function() {
-            $("#read-more-button").click(function() {
-                $("#about p:last-child").slideToggle();
+            $("#show-more-button").click(function() {
+                $("#more-content").slideDown();
             });
         });
     </script>
@@ -23,7 +23,10 @@
         <p>姓名 : 李宗諺</p>
         <p>學校 : 輔仁大學資訊工程</p>
         <p>自我介紹 : 哈囉!</p>
-        <button id="read-more-button">閱讀更多</button>
+        <div id="more-content" style="display: none;">
+            <p>哈哈</p>
+        </div>
+    <button id="read-more-button">閱讀更多</button>
     </section>
 
 
