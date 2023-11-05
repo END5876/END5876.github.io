@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Page</title>
     <link rel="stylesheet" href="style.css">
     <script>
         $(document).ready(function() {
-            $("#show-more-button").click(function() {
-                $("#more-content").slideDown();
+            $("#read-more-button").click(function() {
+                $("#about p:last-child").slideToggle();
             });
         });
     </script>
@@ -23,10 +24,7 @@
         <p>姓名 : 李宗諺</p>
         <p>學校 : 輔仁大學資訊工程</p>
         <p>自我介紹 : 哈囉!</p>
-        <div id="more-content" style="display: none;">
-            <p>哈哈</p>
-        </div>
-    <button id="read-more-button">閱讀更多</button>
+    <button id="read-more-button">一個會彈跳的方塊</button>
     </section>
 
 
@@ -38,6 +36,6 @@
     <footer>
         <p>&copy; 2023 LIZONGYAN</p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </body>
 </html>
