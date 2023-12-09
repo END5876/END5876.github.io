@@ -75,15 +75,23 @@ function setReminder(task, deadline) {
 
 function showReminderNotification(task) {
     // 檢查瀏覽器是否支持 Notification API
-    if ('Notification' in window) {
-        // 請求用戶許可顯示通知
-        Notification.requestPermission().then(function (permission) {
-            if (permission === 'granted') {
-                // 顯示提醒通知
-                var notification = new Notification('Reminder', {
-                    body: 'Task deadline reached: ' + task,
-                });
-            }
-        });
-    }
+    if (Notification.permission === 'granted') {
+            // 顯示提醒通知
+            var notification = new Notification('Reminder', {
+                body: 'Task deadline reached: ' + task,
+            });
+    };
+
+    notification.onclick = function() {
+        console.log('通知被点击');
+        // 在这里添加处理点击通知的逻辑
+      };
 }
+
+Notification.requestPermission().then(function(permission) {
+    if (permission === 'granted') {
+      console.log('用户已授予通知权限');
+    } else {
+      console.error('用户未授予通知权限');
+   }
+  });
