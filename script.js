@@ -78,7 +78,7 @@ function showReminderNotification(task) {
     if (Notification.permission === 'granted') {
             // 顯示提醒通知
             var notification = new Notification('Reminder', {
-                body: 'Task deadline reached: ' + task,
+                body: 'Deadline reached: ' + task,
             });
     };
 
